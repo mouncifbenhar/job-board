@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobBoard Admin - Edit Offer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-[#f8f9fe] text-gray-800 font-sans min-h-screen pb-16">
+
+    <header class="bg-white border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+
+            <a href="index.html"
+                class="text-xl font-bold text-indigo-900 flex items-center gap-2 hover:opacity-90 transition">
+                <span
+                    class="bg-indigo-600 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm font-black">B</span>
+                <span>Board Jobs</span>
+            </a>
+
+
+            <nav class="flex items-center gap-2 md:gap-4 text-sm font-medium">
+                <a href="index.html"
+                    class="px-3 py-2 rounded-lg text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition">
+                    offres
+                </a>
+                <a href="Offers_Management.html"
+                    class="px-3 py-2 rounded-lg text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition">
+                    admin
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 mt-6">
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm mb-6 flex items-start justify-between">
+            <div>
+                <h1 class="text-xl font-bold text-gray-900">Edit Offer: Frontend React Developer</h1>
+                <p class="text-xs text-gray-400 font-medium mt-1">Configure candidate requirements, role summary, and
+                    technology stack tags.</p>
+            </div>
+            <span class="bg-gray-100 text-gray-500 text-xs px-2.5 py-1 rounded-md font-medium font-mono">ID:
+                OFF-8492</span>
+        </div>
+
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-6">
+
+
+            <div>
+                <div class="flex justify-between items-center mb-1.5">
+                    <label class="block text-xs font-bold text-gray-700">Offer Title <span
+                            class="text-red-500">*</span></label>
+                    <span class="text-[11px] text-gray-400">32/80</span>
+                </div>
+                <input type="text" value="Frontend React Developer"
+                    class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+            </div>
+
+
+            <div>
+                <div class="flex justify-between items-center mb-1.5">
+                    <label class="block text-xs font-bold text-gray-700">Short Description <span
+                            class="text-red-500">*</span></label>
+                    <span class="text-[11px] text-gray-400">Brief card summary</span>
+                </div>
+                <input type="text"
+                    value="Build high-performance client web applications using React 19 and modern CSS architectures."
+                    class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1.5">
+                    <label class="block text-xs font-bold text-gray-700">Full Offer Description <span
+                            class="text-red-500">*</span></label>
+                    <span class="text-[11px] text-gray-400">Markdown supported</span>
+                </div>
+                <textarea rows="8"
+                    class="w-full p-4 bg-[#f8f9fe] border border-gray-200 rounded-xl text-xs text-gray-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white resize-none">We are seeking an experienced Frontend React Developer to spearhead our UI architecture revamp.
+
+Key Responsibilities:
+- Design and ship responsive UI flows.
+- Optimize web app render cycles and hydration metrics.
+- Collaborate with backend engineers on REST and GraphQL specs.</textarea>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <label class="block text-xs font-bold text-gray-700">Required Technologies <span
+                            class="text-red-500">*</span></label>
+                    <span class="text-[11px] text-indigo-600 font-semibold">3 selected</span>
+                </div>
+                <p class="text-[11px] text-gray-400 mb-3">Tap chips to toggle requirements or add a custom skill stack.
+                </p>
+
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <button
+                        class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
+                        <span>React</span>
+                        <i class="fa-solid fa-check text-[10px]"></i>
+                    </button>
+                    <button
+                        class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
+                        <span>TypeScript</span>
+                        <i class="fa-solid fa-check text-[10px]"></i>
+                    </button>
+                    <button
+                        class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
+                        <span>Node.js</span>
+                        <i class="fa-solid fa-check text-[10px]"></i>
+                    </button>
+                    <button
+                        class="bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
+                        <span>Python</span>
+                        <span class="text-gray-400 text-xs">+</span>
+                    </button>
+                    <button
+                        class="bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
+                        <span>SQL</span>
+                        <span class="text-gray-400 text-xs">+</span>
+                    </button>
+                    <button
+                        class="bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
+                        <span>Docker</span>
+                        <span class="text-gray-400 text-xs">+</span>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="text" placeholder="Add custom tech (e.g. Next.js)"
+                        class="flex-1 px-4 py-2 bg-[#f8f9fe] border border-gray-200 rounded-xl text-xs placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                    <button
+                        class="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 text-xs font-semibold px-4 py-2 rounded-xl transition">
+                        + Add
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="flex items-center justify-end gap-3 mt-6">
+            <button
+                class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold px-5 py-2.5 rounded-xl transition">
+                Cancel
+            </button>
+            <button
+                class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-5 py-2.5 rounded-xl flex items-center gap-2 transition shadow-sm">
+                <i class="fa-regular fa-floppy-disk"></i>
+                <span>Update Offer</span>
+            </button>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
