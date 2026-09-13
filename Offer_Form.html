@@ -47,110 +47,250 @@
                 OFF-8492</span>
         </div>
 
-
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-6">
-
-
-            <div>
-                <div class="flex justify-between items-center mb-1.5">
-                    <label class="block text-xs font-bold text-gray-700">Offer Title <span
-                            class="text-red-500">*</span></label>
-                    <span class="text-[11px] text-gray-400">32/80</span>
+        <form id="editOfferForm">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-6">
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="offerTitle" class="block text-xs font-bold text-gray-700">
+                            Offer Title
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                    </div>
+                    <input type="text" id="offerTitle" name="title" value="Frontend React Developer" required
+                        maxlength="80"
+                        class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
                 </div>
-                <input type="text" value="Frontend React Developer"
-                    class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="company" class="block text-xs font-bold text-gray-700">
+                            Company
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                    </div>
+                    <input type="text" id="company" name="company" value="Tech Solutions" required maxlength="100"
+                        class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="city" class="block text-xs font-bold text-gray-700">
+                            City
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                    </div>
+                    <input type="text" id="city" name="city" value="Casablanca" required maxlength="100"
+                        class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="contractType" class="block text-xs font-bold text-gray-700">
+                            Contract Type
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                    </div>
+                    <select id="contractType" name="contract_type" required
+                        class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                        <option value="Stage" selected>
+                            Stage
+                        </option>
+                        <option value="Alternance">
+                            Alternance
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="shortDescription" class="block text-xs font-bold text-gray-700">
+                            Short Description
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                        <span class="text-[11px] text-gray-400">
+                            Brief card summary
+                        </span>
+                    </div>
+                    <input type="text" id="shortDescription" name="short_description"
+                        value="Build high-performance client web applications using React 19 and modern CSS architectures."
+                        required
+                        class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="fullDescription" class="block text-xs font-bold text-gray-700">
+                            Full Offer Description
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                    </div>
+                    <textarea id="fullDescription" name="description" rows="8" required
+                        class="w-full p-4 bg-[#f8f9fe] border border-gray-200 rounded-xl text-xs text-gray-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                        </textarea>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="candidateProfile" class="block text-xs font-bold text-gray-700">
+                            Candidate Profile
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                    </div>
+                    <textarea id="candidateProfile" name="profile" rows="5" required
+                        class="w-full p-4 bg-[#f8f9fe] border border-gray-200 rounded-xl text-xs text-gray-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white resize-none">
+                        </textarea>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="applicationContact" class="block text-xs font-bold text-gray-700">
+                            Application Contact / Link
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                    </div>
+                    <input type="text" id="applicationContact" name="application_contact" required
+                        class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label for="publicationDate" class="block text-xs font-bold text-gray-700">
+                            Publication Date
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                    </div>
+                    <input type="date" id="publicationDate" name="publication_date" value="2026-09-10" required
+                        class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm font-medium text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <label class="block text-xs font-bold text-gray-700">
+                            Required Technologies
+                            <span class="text-red-500">
+                                *
+                            </span>
+                        </label>
+                        <span id="selectedTechCount" class="text-[11px] text-indigo-600 font-semibold">
+                            3 selected
+                        </span>
+                    </div>
+                    <p class="text-[11px] text-gray-400 mb-3">
+                        Select the technologies required for this offer.
+                    </p>
+                    <div id="technologiesContainer" class="flex flex-wrap gap-2 mb-4">
+                        <label class="cursor-pointer">
+                            <input type="checkbox" id="techReact" name="technologies[]" value="React" checked
+                                class="hidden tech-checkbox">
+                            <span
+                                class="tech-button bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
+                                <span>
+                                    React
+                                </span>
+                                <i class="fa-solid fa-check text-[10px]">
+                                </i>
+                            </span>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="checkbox" id="techTypeScript" name="technologies[]" value="TypeScript" checked
+                                class="hidden tech-checkbox">
+                            <span
+                                class="tech-button bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
+                                <span>
+                                    TypeScript
+                                </span>
+                                <i class="fa-solid fa-check text-[10px]">
+                                </i>
+                            </span>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="checkbox" id="techNode" name="technologies[]" value="Node.js" checked
+                                class="hidden tech-checkbox">
+                            <span
+                                class="tech-button bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
+                                <span>
+                                    Node.js
+                                </span>
+                                <i class="fa-solid fa-check text-[10px]">
+                                </i>
+                            </span>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="checkbox" id="techPython" name="technologies[]" value="Python"
+                                class="hidden tech-checkbox">
+                            <span
+                                class="tech-button bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
+                                <span>
+                                    Python
+                                </span>
+                                <span class="text-gray-400 text-xs">
+                                    +
+                                </span>
+                            </span>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="checkbox" id="techSQL" name="technologies[]" value="SQL"
+                                class="hidden tech-checkbox">
+                            <span
+                                class="tech-button bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
+                                <span>
+                                    SQL
+                                </span>
+                                <span class="text-gray-400 text-xs">
+                                    +
+                                </span>
+                            </span>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="checkbox" id="techDocker" name="technologies[]" value="Docker"
+                                class="hidden tech-checkbox">
+                            <span
+                                class="tech-button bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
+                                <span>
+                                    Docker
+                                </span>
+                                <span class="text-gray-400 text-xs">
+                                    +
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="text" id="customTechnology" name="custom_technology"
+                            placeholder="Add custom tech (e.g. Next.js)"
+                            class="flex-1 px-4 py-2 bg-[#f8f9fe] border border-gray-200 rounded-xl text-xs placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+                        <button type="button" id="addTechnologyBtn"
+                            class="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 text-xs font-semibold px-4 py-2 rounded-xl transition">
+                            + Add
+                        </button>
+                    </div>
+                </div>
             </div>
-
-
-            <div>
-                <div class="flex justify-between items-center mb-1.5">
-                    <label class="block text-xs font-bold text-gray-700">Short Description <span
-                            class="text-red-500">*</span></label>
-                    <span class="text-[11px] text-gray-400">Brief card summary</span>
-                </div>
-                <input type="text"
-                    value="Build high-performance client web applications using React 19 and modern CSS architectures."
-                    class="w-full px-4 py-2.5 bg-[#f8f9fe] border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
+            <div class="flex items-center justify-end gap-3 mt-6">
+                <button type="button" id="cancelBtn"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold px-5 py-2.5 rounded-xl transition">
+                    Cancel
+                </button>
+                <button type="submit" id="submitOfferBtn"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-5 py-2.5 rounded-xl flex items-center gap-2 transition shadow-sm">
+                    <i class="fa-regular fa-floppy-disk">
+                    </i>
+                    <span>
+                        Create Offer
+                    </span>
+                </button>
             </div>
-            <div>
-                <div class="flex justify-between items-center mb-1.5">
-                    <label class="block text-xs font-bold text-gray-700">Full Offer Description <span
-                            class="text-red-500">*</span></label>
-                    <span class="text-[11px] text-gray-400">Markdown supported</span>
-                </div>
-                <textarea rows="8"
-                    class="w-full p-4 bg-[#f8f9fe] border border-gray-200 rounded-xl text-xs text-gray-700 leading-relaxed focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white resize-none">We are seeking an experienced Frontend React Developer to spearhead our UI architecture revamp.
+        </form>
 
-Key Responsibilities:
-- Design and ship responsive UI flows.
-- Optimize web app render cycles and hydration metrics.
-- Collaborate with backend engineers on REST and GraphQL specs.</textarea>
-            </div>
-            <div>
-                <div class="flex justify-between items-center mb-1">
-                    <label class="block text-xs font-bold text-gray-700">Required Technologies <span
-                            class="text-red-500">*</span></label>
-                    <span class="text-[11px] text-indigo-600 font-semibold">3 selected</span>
-                </div>
-                <p class="text-[11px] text-gray-400 mb-3">Tap chips to toggle requirements or add a custom skill stack.
-                </p>
-
-
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <button
-                        class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
-                        <span>React</span>
-                        <i class="fa-solid fa-check text-[10px]"></i>
-                    </button>
-                    <button
-                        class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
-                        <span>TypeScript</span>
-                        <i class="fa-solid fa-check text-[10px]"></i>
-                    </button>
-                    <button
-                        class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5">
-                        <span>Node.js</span>
-                        <i class="fa-solid fa-check text-[10px]"></i>
-                    </button>
-                    <button
-                        class="bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
-                        <span>Python</span>
-                        <span class="text-gray-400 text-xs">+</span>
-                    </button>
-                    <button
-                        class="bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
-                        <span>SQL</span>
-                        <span class="text-gray-400 text-xs">+</span>
-                    </button>
-                    <button
-                        class="bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs px-3 py-1.5 rounded-lg font-medium flex items-center gap-1.5 transition">
-                        <span>Docker</span>
-                        <span class="text-gray-400 text-xs">+</span>
-                    </button>
-                </div>
-
-                <div class="flex items-center gap-2">
-                    <input type="text" placeholder="Add custom tech (e.g. Next.js)"
-                        class="flex-1 px-4 py-2 bg-[#f8f9fe] border border-gray-200 rounded-xl text-xs placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white">
-                    <button
-                        class="bg-indigo-50 text-indigo-600 hover:bg-indigo-100 text-xs font-semibold px-4 py-2 rounded-xl transition">
-                        + Add
-                    </button>
-                </div>
-            </div>
-
-        </div>
-        <div class="flex items-center justify-end gap-3 mt-6">
-            <button
-                class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-semibold px-5 py-2.5 rounded-xl transition">
-                Cancel
-            </button>
-            <button
-                class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold px-5 py-2.5 rounded-xl flex items-center gap-2 transition shadow-sm">
-                <i class="fa-regular fa-floppy-disk"></i>
-                <span>Update Offer</span>
-            </button>
-        </div>
 
     </main>
 
