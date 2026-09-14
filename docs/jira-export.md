@@ -1,7 +1,7 @@
 ## Jira Project
 
 ### Jira link
-https://expertshumancapital.atlassian.net/jira/software/projects/JBB/boards/38/backlog?atlOrigin=eyJpIjoiN2JmYTBhOGIyOGMxNDE3Mjk1OWRmYWNhNzViOTEzMzEiLCJwIjoiaiJ9
+https://mouncifbenhar.atlassian.net/jira/software/projects/JBB/boards/34/backlog?atlOrigin=eyJpIjoiMDU5ZmQ1YWQxNTdjNGVlYTg1NTZjZmNhNTMyNzExZmIiLCJwIjoiaiJ9
 
 
 The project is managed using the Agile Scrum methodology.
