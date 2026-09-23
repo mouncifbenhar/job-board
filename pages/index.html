@@ -51,8 +51,7 @@
             <div class="flex items-center gap-6 text-sm">
                 <span class="text-gray-500 font-medium">Showing <strong class="text-gray-800">5</strong>
                     opportunities</span>
-                <button
-                    id="sort"
+                <button id="sort"
                     class="flex items-center gap-2 bg-white border border-gray-200 px-3.5 py-2 rounded-xl font-medium text-gray-700 hover:bg-gray-50 shadow-sm">
                     <i class="fa-solid fa-arrow-up-wide-short text-gray-500"></i>
                     <span>Sort: <strong>Newest</strong></span>
@@ -60,23 +59,38 @@
             </div>
         </div>
 
+        <div id="tec" class="flex flex-wrap items-center gap-2 mb-8">
 
-        <div class="flex flex-wrap items-center gap-2 mb-8">
-            <button class="bg-indigo-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium">All</button>
             <button
-                class="bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-50">React</button>
+                class="tec bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-50"
+                value="React">
+                React
+            </button>
+
             <button
-                class="bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-50">Python</button>
+                class="tec bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-50"
+                value="Python">
+                Python
+            </button>
+
             <button
-                class="bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-50">Node.js</button>
+                class="tec bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-50"
+                value="Node.js">
+                Node.js
+            </button>
+
             <button
-                class="bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-50">Figma</button>
+                class="tec bg-white border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-gray-50"
+                value="Figma">
+                Figma
+            </button>
+
         </div>
 
 
         <div id="offers-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-<script type="module"  src="../js/app.js" ></script>
+        <script type="module" src="../js/app.js"></script>
 </body>
 
 </html>
