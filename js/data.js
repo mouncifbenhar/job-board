@@ -1,4 +1,4 @@
-export async function getData() {
+async function getData() {
 
     try{
         const response = await fetch("../data/offers.json")
@@ -9,3 +9,5 @@ export async function getData() {
     }
     
 }
+
+export const offers = await getData();
