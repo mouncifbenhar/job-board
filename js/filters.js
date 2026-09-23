@@ -14,4 +14,8 @@ export function sort(offers) {
 
     return result
 }
+export function searsh_bytec(offers, value) {
 
+    const result = offers.filter((offer)=> offer.technologies.includes(value))
+    return result
+}
