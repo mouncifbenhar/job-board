@@ -56,7 +56,8 @@ nav.setAttribute("class","flex items-center gap-1 text-xs text-gray-500 bg-gray-
 const a = document.createElement("a")
 
 a.setAttribute("href",`Offer_Details.html?id=${offer.id}`)
-
+a.setAttribute("value",offer.id)
+a.setAttribute("class","link")
 a.textContent = "Details"
 
 
@@ -118,5 +119,399 @@ offers_container.appendChild(div_0)
 })
 
 }
+
+export function display_offer_byId(offers,id){
+
+const offer = offers.find( offer => offer.id === id )
+const main = document.querySelector("main")
+
+
+// =========================
+// HEADER
+// =========================
+
+const header = document.createElement("div")
+
+header.setAttribute(
+    "class",
+    "bg-white p-6 rounded-2xl border border-gray-100 shadow-sm mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+)
+
+
+const header_content = document.createElement("div")
+
+
+const status_div = document.createElement("div")
+
+status_div.setAttribute(
+    "class",
+    "flex items-center gap-2 mb-2"
+)
+
+
+const status_point = document.createElement("span")
+
+status_point.setAttribute(
+    "class",
+    "inline-block w-2 h-2 rounded-full bg-emerald-500"
+)
+
+
+const status_text = document.createElement("span")
+
+status_text.setAttribute(
+    "class",
+    "text-xs font-medium text-gray-500"
+)
+
+status_text.textContent = offer.typeContrat
+
+
+status_div.appendChild(status_point)
+
+status_div.appendChild(status_text)
+
+
+const h1 = document.createElement("h1")
+
+h1.setAttribute(
+    "class",
+    "text-2xl font-bold text-gray-900"
+)
+
+h1.textContent = offer.titre
+
+
+const entreprise = document.createElement("p")
+
+entreprise.setAttribute(
+    "class",
+    "text-xs text-gray-500 mt-1"
+)
+
+entreprise.textContent = offer.entreprise + " - " + offer.ville
+
+
+header_content.appendChild(status_div)
+
+header_content.appendChild(h1)
+
+header_content.appendChild(entreprise)
+
+
+// Follow button
+const follow_button = document.createElement("button")
+
+follow_button.setAttribute(
+    "class",
+    "bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium text-xs flex items-center justify-center gap-2 hover:bg-indigo-700 transition shadow-sm self-start sm:self-auto"
+)
+
+
+const follow_icon = document.createElement("i")
+
+follow_icon.setAttribute(
+    "class",
+    "fa-regular fa-bookmark"
+)
+
+
+const follow_text = document.createElement("span")
+
+follow_text.textContent = "Follow Offer"
+
+
+follow_button.appendChild(follow_icon)
+
+follow_button.appendChild(follow_text)
+
+
+header.appendChild(header_content)
+
+header.appendChild(follow_button)
+
+
+// =========================
+// GRID
+// =========================
+
+const grid = document.createElement("div")
+
+grid.setAttribute(
+    "class",
+    "grid grid-cols-1 lg:grid-cols-3 gap-6"
+)
+
+
+// =========================
+// LEFT CONTENT
+// =========================
+
+const left_content = document.createElement("div")
+
+left_content.setAttribute(
+    "class",
+    "lg:col-span-2 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-8"
+)
+
+
+// Offer Information
+const information_div = document.createElement("div")
+
+const information_title = document.createElement("h2")
+
+information_title.setAttribute(
+    "class",
+    "text-base font-bold text-gray-900 pb-4 border-b border-gray-100"
+)
+
+information_title.textContent = "Offer Information"
+
+information_div.appendChild(information_title)
+
+
+// Description courte
+const short_description_div = document.createElement("div")
+
+short_description_div.setAttribute(
+    "class",
+    "space-y-2"
+)
+
+
+const short_description_title = document.createElement("h3")
+
+short_description_title.setAttribute(
+    "class",
+    "text-xs font-bold text-gray-900"
+)
+
+short_description_title.textContent = "Description courte"
+
+
+const short_description = document.createElement("p")
+
+short_description.setAttribute(
+    "class",
+    "text-xs text-gray-500 leading-relaxed"
+)
+
+short_description.textContent = offer.descriptionCourte
+
+
+short_description_div.appendChild(short_description_title)
+
+short_description_div.appendChild(short_description)
+
+
+// Description longue
+const long_description_div = document.createElement("div")
+
+long_description_div.setAttribute(
+    "class",
+    "space-y-2"
+)
+
+
+const long_description_title = document.createElement("h3")
+
+long_description_title.setAttribute(
+    "class",
+    "text-xs font-bold text-gray-900"
+)
+
+long_description_title.textContent = "Description longue"
+
+
+const long_description = document.createElement("p")
+
+long_description.setAttribute(
+    "class",
+    "text-xs text-gray-500 leading-relaxed"
+)
+
+long_description.textContent = offer.descriptionLongue
+
+
+long_description_div.appendChild(long_description_title)
+
+long_description_div.appendChild(long_description)
+
+
+// Profil recherché
+const profile_div = document.createElement("div")
+
+profile_div.setAttribute(
+    "class",
+    "space-y-2"
+)
+
+
+const profile_title = document.createElement("h3")
+
+profile_title.setAttribute(
+    "class",
+    "text-xs font-bold text-gray-900"
+)
+
+profile_title.textContent = "Profil recherché"
+
+
+const profile = document.createElement("p")
+
+profile.setAttribute(
+    "class",
+    "text-xs text-gray-500 leading-relaxed"
+)
+
+profile.textContent = offer.profilRecherche
+
+
+profile_div.appendChild(profile_title)
+
+profile_div.appendChild(profile)
+
+
+// Work details
+const work_details_div = document.createElement("div")
+
+work_details_div.setAttribute(
+    "class",
+    "space-y-2"
+)
+
+
+const work_details_title = document.createElement("h3")
+
+work_details_title.setAttribute(
+    "class",
+    "text-xs font-bold text-gray-900"
+)
+
+work_details_title.textContent = "Informations"
+
+
+const work_details = document.createElement("p")
+
+work_details.setAttribute(
+    "class",
+    "text-xs text-gray-500 leading-relaxed"
+)
+
+work_details.textContent =
+    "Type de contrat : " + offer.typeContrat +
+    " | Ville : " + offer.ville +
+    " | Date de publication : " + offer.datePublication
+
+
+work_details_div.appendChild(work_details_title)
+
+work_details_div.appendChild(work_details)
+
+
+// Add everything to left content
+left_content.appendChild(information_div)
+
+left_content.appendChild(short_description_div)
+
+left_content.appendChild(long_description_div)
+
+left_content.appendChild(profile_div)
+
+left_content.appendChild(work_details_div)
+
+
+// =========================
+// RIGHT CONTENT
+// =========================
+
+const right_content = document.createElement("div")
+
+right_content.setAttribute(
+    "class",
+    "bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-fit space-y-4"
+)
+
+
+const technologies_title = document.createElement("h2")
+
+technologies_title.setAttribute(
+    "class",
+    "text-sm font-bold text-gray-900"
+)
+
+technologies_title.textContent = "Associated Technologies"
+
+
+const technologies_div = document.createElement("div")
+
+technologies_div.setAttribute(
+    "class",
+    "flex flex-wrap gap-2 pt-1"
+)
+
+
+offer.technologies.forEach(tech => {
+
+    const technology = document.createElement("span")
+
+    technology.setAttribute(
+        "class",
+        "bg-indigo-50/70 text-indigo-700 border border-indigo-100 text-xs px-3 py-1.5 rounded-lg font-medium"
+    )
+
+    technology.textContent = tech
+
+    technologies_div.appendChild(technology)
+})
+
+
+// Contact
+const contact_title = document.createElement("h2")
+
+contact_title.setAttribute(
+    "class",
+    "text-sm font-bold text-gray-900 mt-4"
+)
+
+contact_title.textContent = "Contact"
+
+
+const contact = document.createElement("p")
+
+contact.setAttribute(
+    "class",
+    "text-xs text-gray-500"
+)
+
+contact.textContent = offer.emailContact
+
+
+right_content.appendChild(technologies_title)
+
+right_content.appendChild(technologies_div)
+
+right_content.appendChild(contact_title)
+
+right_content.appendChild(contact)
+
+
+// =========================
+// GRID + MAIN
+// =========================
+
+grid.appendChild(left_content)
+
+grid.appendChild(right_content)
+
+main.appendChild(header)
+
+main.appendChild(grid)
+}
+
+
+
+
+
 
 
