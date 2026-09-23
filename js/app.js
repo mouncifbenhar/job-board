@@ -1,5 +1,6 @@
 import { offers } from "./data.js"
-import { disply_offers} from "./render.js"
+import { disply_pagination} from "./render.js"
 
 
-disply_offers(offers)
+disply_pagination(offers)
+
