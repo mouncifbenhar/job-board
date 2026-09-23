@@ -1,6 +1,10 @@
-export function disply_offers(offers){
-const offers_container = document.querySelector("#offers-container")
+import { pagnation } from "./paginition.js"
 
+
+export function disply_offers(offers){
+
+const offers_container = document.querySelector("#offers-container")
+offers_container.textContent = ""
 offers.forEach(offer =>{
 const div_0 = document.createElement("div")
 
@@ -511,6 +515,100 @@ main.appendChild(grid)
 
 
 
+
+
+// export function disply_pagination(offers){
+
+// const limit_iteam_in_page = 3
+// const page_limet =  Math.round(offers.length / limit_iteam_in_page)
+
+// const main = document.querySelector("main")
+// const div_contain_number_page = document.createElement("div")
+
+
+// for( let i = 1 ; i <= page_limet ; i++){
+//     const page_number_div = document.createElement("div")
+//     page_number_div.setAttribute("class","w-9 h-9 flex items-center justify-center rounded-xl bg-blue-700 text-white text-sm font-bold")
+//     page_number_div.setAttribute("id","page_number_div")
+//     page_number_div.setAttribute("value",i)
+//     page_number_div.textContent = i
+//     div_contain_number_page.appendChild(page_number_div)
+//     main.appendChild(div_contain_number_page)
+// }
+
+// const page_number_div = document.querySelectorAll("#page_number_div")
+// page_number_div.forEach(div => {
+//     div.addEventListener("click",() => {
+//     const itime_value = div.getAttribute("value")
+//     const new_offers = pagnation(itime_value,limit_iteam_in_page,offers)
+//     disply_offers(new_offers)
+// })
+// });
+// }
+
+
+export function disply_pagination(offers) {
+
+    const limit_iteam_in_page = 3
+
+    const page_limet = Math.ceil(offers.length / limit_iteam_in_page)
+
+    const main = document.querySelector("main")
+
+    const div_contain_number_page = document.createElement("div")
+
+    div_contain_number_page.setAttribute(
+        "class",
+        "flex items-center justify-center gap-2 mt-6"
+    )
+
+    for (let i = 1; i <= page_limet; i++) {
+
+        const page_number_div = document.createElement("div")
+
+        page_number_div.setAttribute(
+            "class",
+            "page-number w-9 h-9 flex items-center justify-center rounded-xl bg-blue-700 text-white text-sm font-bold cursor-pointer hover:bg-blue-800"
+        )
+
+        page_number_div.setAttribute("value", i)
+
+        page_number_div.textContent = i
+
+        div_contain_number_page.appendChild(page_number_div)
+    }
+
+    main.appendChild(div_contain_number_page)
+
+
+    const page_number_div = document.querySelectorAll(".page-number")
+
+    
+            const new_offers = pagnation(
+                1,
+                limit_iteam_in_page,
+                offers
+            )
+            disply_offers(new_offers)
+        
+    
+    page_number_div.forEach(div => {
+
+        div.addEventListener("click", () => {
+
+            const itime_value = div.getAttribute("value")
+        
+            const new_offers = pagnation(
+                itime_value,
+                limit_iteam_in_page,
+                offers
+            )
+            
+            disply_offers(new_offers)
+        
+        })
+    })
+}
 
 
 
