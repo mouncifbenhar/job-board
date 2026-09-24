@@ -124,9 +124,8 @@ offers_container.appendChild(div_0)
 
 }
 
-export function display_offer_byId(offers,id){
+export function display_offer_byId(offer){
 
-const offer = offers.find( offer => offer.id === id )
 const main = document.querySelector("main")
 
 
@@ -209,6 +208,9 @@ const follow_button = document.createElement("button")
 follow_button.setAttribute(
     "class",
     "bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium text-xs flex items-center justify-center gap-2 hover:bg-indigo-700 transition shadow-sm self-start sm:self-auto"
+)
+follow_button.setAttribute(
+    "id","follow"
 )
 
 
