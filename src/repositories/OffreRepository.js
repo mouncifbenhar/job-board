@@ -13,6 +13,22 @@ class OffreRepository {
             }
         });
     }
+    async getById(id) {
+        return await prisma.offre.findUnique({
+            where: {
+                id: Number(id)
+            },
+            include: {
+                entreprise: true,
+                offre_technologie: {
+                    include: {
+                        technologie: true
+                    }
+                }
+            }
+        })
+    }
+
 }
 
 export default OffreRepository;

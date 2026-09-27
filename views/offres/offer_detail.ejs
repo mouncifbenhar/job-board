@@ -1,0 +1,151 @@
+<%- include('../parts/header') %>
+    <div
+        class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+        <div>
+
+            <div class="flex items-center gap-2 mb-2">
+
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+
+                <span class="text-xs font-medium text-gray-500">
+                    <%= offre.type_contrat %>
+                </span>
+
+            </div>
+
+            <h1 class="text-2xl font-bold text-gray-900">
+                <%= offre.title %>
+            </h1>
+
+            <p class="text-xs text-gray-500 mt-1">
+                <%= offre.entreprise.company_name %>
+                    - <%= offre.ville %>
+            </p>
+
+        </div>
+
+        <button id="follow" type="button"
+            class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium text-xs flex items-center justify-center gap-2 hover:bg-indigo-700 transition shadow-sm self-start sm:self-auto">
+            <i class="fa-regular fa-bookmark"></i>
+            <span>Follow Offer</span>
+        </button>
+
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+
+        <div class="lg:col-span-2 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-8">
+
+            <div>
+
+                <h2 class="text-base font-bold text-gray-900 pb-4 border-b border-gray-100">
+                    Offer Information
+                </h2>
+
+            </div>
+
+
+            <div class="space-y-2">
+
+                <h3 class="text-xs font-bold text-gray-900">
+                    Description courte
+                </h3>
+
+                <p class="text-xs text-gray-500 leading-relaxed">
+                    <%= offre.description_courte %>
+                </p>
+
+            </div>
+
+
+            <div class="space-y-2">
+
+                <h3 class="text-xs font-bold text-gray-900">
+                    Description longue
+                </h3>
+
+                <p class="text-xs text-gray-500 leading-relaxed whitespace-pre-line">
+                    <%= offre.description_longue %>
+                </p>
+
+            </div>
+
+
+            <div class="space-y-2">
+
+                <h3 class="text-xs font-bold text-gray-900">
+                    Profil recherché
+                </h3>
+
+                <p class="text-xs text-gray-500 leading-relaxed whitespace-pre-line">
+                    <%= offre.profil_recherche %>
+                </p>
+
+            </div>
+
+
+            <div class="space-y-2">
+
+                <h3 class="text-xs font-bold text-gray-900">
+                    Informations
+                </h3>
+
+                <p class="text-xs text-gray-500 leading-relaxed">
+                    Type de contrat :<%= offre.type_contrat %>
+                    Ville : <%= offre.ville %>
+                    Date de publication : <%= new Date(offre.date_publication).toLocaleDateString("fr-FR") %>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-fit space-y-4">
+
+            <h2 class="text-sm font-bold text-gray-900">
+                Associated Technologies
+            </h2>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+
+                <% offre.offre_technologie.forEach(item=> { %>
+
+                    <span
+                        class="bg-indigo-50/70 text-indigo-700 border border-indigo-100 text-xs px-3 py-1.5 rounded-lg font-medium">
+                        <%= item.technologie.technologie_name %>
+                    </span>
+
+                    <% }) %>
+
+            </div>
+
+            <div class="pt-4 border-t border-gray-100">
+
+                <h2 class="text-sm font-bold text-gray-900 mb-2">
+                    Contact
+                </h2>
+
+                <a href="mailto:<%= offre.email_contact %>"
+                    class="text-xs text-indigo-600 hover:text-indigo-700 break-all">
+                    <i class="fa-regular fa-envelope mr-1"></i>
+                    <%= offre.email_contact %>
+                </a>
+
+            </div>
+
+            <div class="pt-2">
+
+                <a href="<%= offre.lien_candidature %>" target="_blank" rel="noopener noreferrer"
+                    class="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl font-medium text-sm flex items-center justify-center gap-2 hover:bg-indigo-700 transition">
+                    Postuler
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+    <%- include('../parts/footer') %>
