@@ -28,6 +28,25 @@ class OffreRepository {
             }
         })
     }
+    async create(data, technologiesIds) {
+
+        const offre = await prisma.offre.create({
+            data: data
+        });
+
+        for (const technologieId of technologiesIds) {
+
+            await prisma.offre_technologie.create({
+                data: {
+                    offre_id: offre.id,
+                    technologie_id: technologieId
+                }
+            });
+
+        }
+
+        return offre;
+    }
 
 }
 
