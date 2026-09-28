@@ -15,4 +15,8 @@ router.get("/offres/offer_form", (req, res) => {
 router.post("/admin/offres", (req, res) => {
     OffreController.create(req, res);
 });
+router.post("/offer_delete/:id",(req,res)=> {OffreController.delete(req,res)})
+router.get("/offers_searsh", (req, res) => {
+    OffreController.getAllBySearsh(req, res);
+});
 export default router
