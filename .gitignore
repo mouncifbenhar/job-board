@@ -3,3 +3,4 @@
 node_modules/
 generated/
 test.js
+.DS_Store
