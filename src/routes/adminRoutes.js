@@ -6,8 +6,9 @@ const router = express.Router();
 const adminController = new AdminController();
 
 router.get("/admin", (req, res) => {
-    adminController.index(req, res);
+    adminController.getAll(req, res);
 });
+
 
 
 export default router;
