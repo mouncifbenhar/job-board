@@ -96,7 +96,7 @@ class OfferController {
         }
 
     }
-    async create(req, res) {
+async create(req, res) {
     try {
 
         const data = {
@@ -112,7 +112,9 @@ class OfferController {
             entreprise_id: Number(req.body.entreprise_id)
         };
 
-        let technologiesIds = req.body["technologies[]"];
+        console.log(req.body);
+
+        let technologiesIds = req.body.technologies;
 
         if (!technologiesIds) {
             technologiesIds = [];
@@ -126,14 +128,45 @@ class OfferController {
 
         await this.OffreRepository.create(data, technologiesIds);
 
-        res.redirect("/offres/offer_form");
+        res.redirect("/");
 
     } catch (error) {
         console.error(error);
         res.status(500).send("error server");
     }
 }
+async delete(req, res) {
+    try {
+        const id = req.params.id;
 
+        await this.OffreRepository.delete(id);
+
+        res.redirect("/admin");
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Erreur lors de la suppression de l'offre");
+    }
+}
+async getAllBySearsh(req, res) {
+
+    try {
+
+        const search = req.query.search || "";
+
+        const offres = await this.OffreRepository.getAllBySearsh(search);
+
+        res.render("offres/index", {
+            offres: offres
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).send("Erreur serveur");
+    }
+}
 }
 
 export default OfferController;
