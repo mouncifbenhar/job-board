@@ -1,6 +1,14 @@
 <%- include('../parts/header') %>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="offers-container">
+        <form action="/offers_searsh" method="GET" class="flex gap-3 mb-6">
+            <input type="text" name="search" placeholder="Search by offer name"
+                class="flex-1 px-4 py-3 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500">
 
+            <button type="submit" class="px-5 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700">
+                Search
+            </button>
+        </form>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="offers-container">
+        
         <% offres.forEach(offer=> { %>
 
             <div
@@ -37,7 +45,8 @@
 
                     <% offer.offre_technologie.forEach(item=> { %>
 
-                        <span class="bg-indigo-50/70 text-indigo-700 border border-indigo-100 text-xs px-3 py-1.5 rounded-lg font-medium">
+                        <span
+                            class="bg-indigo-50/70 text-indigo-700 border border-indigo-100 text-xs px-3 py-1.5 rounded-lg font-medium">
                             <%= item.technologie.technologie_name %>
                         </span>
 
