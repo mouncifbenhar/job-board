@@ -47,6 +47,34 @@ class OffreRepository {
 
         return offre;
     }
+    async delete(id) {
+        return await prisma.offre.delete({
+            where: {
+                id: Number(id)
+            }
+        });
+    }
+    async getAllBySearsh(search = "") {
+
+        return await prisma.offre.findMany({
+            where: search
+                ? {
+                    title: {
+                        contains: search
+                    }
+                }
+                : undefined,
+
+            include: {
+                entreprise: true,
+                offre_technologie: {
+                    include: {
+                        technologie: true
+                    }
+                }
+            }
+        });
+    }
 
 }
 
